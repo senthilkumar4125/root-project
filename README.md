@@ -16,3 +16,4 @@ Notes:
 - Default AWS region is `ap-south-1` (Mumbai). Change in infra/variables.tf if needed.
 - Terraform uses local tfstate here. For teams, configure S3 backend and DynamoDB locking.
 - use mumbai (default region )
+- demo video will be release in youtube
