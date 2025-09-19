@@ -17,11 +17,11 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: '98eb9ab6-4749-4310-a686-cc810ad22966', usernameVariable: 'AKIAVDPWILH4GACA3E4M', passwordVariable: 'nwKSiRC3qrRRke/fD0kkmLZ7v9/OPgvCKu9frJGh')]) {
           sh '''
-            export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-            export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+            export AWS_ACCESS_KEY_ID=${AKIAVDPWILH4GACA3E4M
+            export AWS_SECRET_ACCESS_KEY=${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}
             export AWS_REGION=${AWS_REGION}
             AWS_ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-            ECR_URI=${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPO_NAME}
+            ECR_URI=${351093152248}.dkr.ecr.${ap-south-1}.amazonaws.com/${ECR_REPO_NAME}
 
             # ensure repo exists (Terraform should create it; this is a safety)
             aws ecr describe-repositories --repository-names ${ECR_REPO_NAME} --region ${AWS_REGION} || aws ecr create-repository --repository-name ${ECR_REPO_NAME} --region ${AWS_REGION}
