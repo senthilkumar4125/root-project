@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build & Push Image') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'aws-creds', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+        withCredentials([usernamePassword(credentialsId: '98eb9ab6-4749-4310-a686-cc810ad22966', usernameVariable: 'AKIAVDPWILH4GACA3E4M', passwordVariable: 'nwKSiRC3qrRRke/fD0kkmLZ7v9/OPgvCKu9frJGh')]) {
           sh '''
             export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
             export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
@@ -46,8 +46,9 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'aws-creds', usernameVariable: 'AWS_ACCESS_KEY_ID', passwordVariable: 'AWS_SECRET_ACCESS_KEY')]) {
           sh '''
-            export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-            export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+            export AWS_ACCESS_KEY_ID=${AKIAVDPWILH4GACA3E4M
+}
+            export AWS_SECRET_ACCESS_KEY=${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}
             export AWS_REGION=${AWS_REGION}
             aws ecs update-service --cluster ${ECS_CLUSTER} --service ${ECS_SERVICE} --force-new-deployment --region ${AWS_REGION}
           '''
